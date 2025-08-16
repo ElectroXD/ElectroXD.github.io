@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,7 +117,40 @@
             display: none;
             cursor: pointer;
         }
-        
+
+        /* Coming Soon Overlay */
+#coming-soon {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px); /* blur your whole site */
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* keep it on top */
+  text-align: center;
+  padding: 20px;
+}
+
+#coming-soon h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+  animation: pulse 2s infinite;
+}
+
+#coming-soon p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
         /* Hero Section - Fixed Alignment */
         .hero {
             height: 100vh;
@@ -576,6 +610,14 @@
     </style>
 </head>
 <body>
+<!-- Coming Soon Overlay -->
+<div id="coming-soon">
+  <div class="cs-content">
+    <h1>🚀 Coming Soon</h1>
+    <p>I'm working hard to bring this site live. Stay tuned!</p>
+  </div>
+</div>
+
     <!-- Header -->
     <header id="header">
         <div class="container">
@@ -837,3 +879,4 @@
     </script>
 </body>
 </html>
+
